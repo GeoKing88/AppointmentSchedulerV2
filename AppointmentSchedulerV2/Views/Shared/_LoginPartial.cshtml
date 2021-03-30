@@ -1,0 +1,23 @@
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<AppointmentSchedulerV2.Models.ApplicationUser> signInManager
+
+@if (signInManager.IsSignedIn(User))
+{
+
+}
+else
+{
+<ul class="nav navbar-nav bg-primary">
+    <li>
+    @*@Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })*@
+        <a class="nav-link text-white" id="registerLink" asp-controller="Account" asp-action="Register">Register</a>
+    </li>
+    <li>
+    @*@Html.ActionLink("Sign Up", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
+        <a class="nav-link text-white" id="loginLink" asp-controller="Account" asp-action="Login">Sign In</a>
+    </li>
+</ul>
+}
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
